@@ -1,0 +1,4 @@
+import { useState } from 'react'
+import { faqs } from '../../shared/data/content.js'
+import styles from './Faq.module.css'
+export default function Faq(){const [openIndex,setOpenIndex]=useState(0);return <section className={styles.section} id="duvidas"><div className={styles.intro}><span className="eyebrow">PERGUNTA QUE A GENTE RESPONDE</span><h2>Tá com alguma <em>dúvida docinha?</em></h2><p>Separamos algumas respostas pra deixar tudo bem explicadinho.</p></div><div className={styles.list}>{faqs.map((faq,index)=><article className={styles.item} key={faq.question}><h3><button type="button" aria-expanded={openIndex===index} aria-controls={`faq-answer-${index}`} onClick={()=>setOpenIndex(openIndex===index?-1:index)}>{faq.question}<span>{openIndex===index?'−':'+'}</span></button></h3>{openIndex===index&&<div id={`faq-answer-${index}`} className={styles.answer}><p>{faq.answer}</p></div>}</article>)}</div></section>}

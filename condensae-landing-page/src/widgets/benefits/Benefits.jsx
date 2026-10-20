@@ -1,0 +1,3 @@
+import { benefits } from '../../shared/data/content.js'
+import styles from './Benefits.module.css'
+export default function Benefits() { return <section className={styles.section} id="produto"><div className={styles.heading}><span className="eyebrow">A GENTE PENSA PEQUENO. VOCÊ CURTE GRANDE.</span><h2>Seu docinho, <em>suas regras.</em></h2><p>O mesmo sabor que você ama, num formato que acompanha sua vida.</p></div><div className={styles.grid}>{benefits.map((item, index) => <article className={styles.card} key={item.title}><span className={styles.number}>0{index + 1}</span><div className={styles.icon}>{item.icon}</div><h3>{item.title}</h3><p>{item.description}</p></article>)}</div></section> }
